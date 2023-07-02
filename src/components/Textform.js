@@ -55,7 +55,7 @@ export default function Textform(props) {
 
   const [text, setText] = useState("");
   return (
-    <>
+    <div className='Ram'>
     <div className="container" style={{color: props.mode==='light'?"black":"white"}}>
         <h1>
             {props.title}
@@ -74,6 +74,6 @@ export default function Textform(props) {
       </h3>
       <p>{text.split(" ").length} words and {text.length} characters</p>
     </div>
-    </>
+    </div>
   )
 }

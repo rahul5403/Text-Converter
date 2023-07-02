@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React, { useState } from 'react';
 import Alert from './components/Alert'
-// import About from './components/About';
+import About from './components/About';
 
 function App() {
 
@@ -36,14 +36,14 @@ function App() {
 
 
   return (
-    <>
+    <div className="container">
     <Navbar random="Best Navbar Ever" mode = {mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container my-3">
     <Textform title='Enter the text to analyze' mode = {mode} showAlert = {showAlert}/>
-    {/* <About/> */}
+    <About/>
     </div>
-    </>
+    </div>
   );
 }
 
