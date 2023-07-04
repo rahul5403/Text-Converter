@@ -5,6 +5,10 @@ import Textform from './components/Textform';
 import React, { useState } from 'react';
 import Alert from './components/Alert'
 import About from './components/About';
+// import {Routes, Route} from "react-router-dom"
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
 
@@ -36,14 +40,30 @@ function App() {
 
 
   return (
-    <div className="container">
-    <Navbar random="Best Navbar Ever" mode = {mode} toggleMode={toggleMode}/>
-    <Alert alert={alert}/>
-    <div className="container my-3">
-    <Textform title='Enter the text to analyze' mode = {mode} showAlert = {showAlert}/>
-    <About/>
-    </div>
-    </div>
+    // <div>
+    // <Navbar random="Best Navbar Ever" mode = {mode} toggleMode={toggleMode}/>
+    // <Alert alert={alert}/>
+    // <div className="container my-3">
+    // <Textform title='Enter the text to analyze' mode = {mode} showAlert = {showAlert}/>
+    // <About/>
+    // </div>
+    // </div>
+
+    // <Routes>
+    //   <Route path="/" element={<Navbar random="Best Navbar Ever" mode = {mode} toggleMode={toggleMode}/>}/>
+    //   <Route path="/" element={<Textform title='Enter the text to analyze' mode = {mode} showAlert = {showAlert}/>}/>
+    //   <Route path="/" element={<About/>}/>
+    // </Routes>
+
+    <Router>
+        <Navbar random="Best Navbar Ever" mode={mode} toggleMode={toggleMode}/>
+        <div className="container my-3">
+      <Routes>
+        <Route exact path="/" element={<Textform title='Enter the text to analyze' mode={mode} showAlert={showAlert} />} />
+        <Route exact path="/about" element={<About />} />
+      </Routes>
+        </div>
+    </Router>
   );
 }
 
